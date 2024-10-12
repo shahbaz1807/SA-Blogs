@@ -1,0 +1,68 @@
+[
+    {
+        "img": "https://wallpapers.com/images/hd/java-script-logoon-dark-background-aw286n669vxuej30.jpg",
+        "title": "Adding Interactivity to Web Pages",
+        "description": "Discover the power of JavaScript to make your website dynamic and engaging.",
+        "date": "17-Sep-2024"
+    },
+    {
+        "img": "https://images.ctfassets.net/aq13lwl6616q/2riCopFVTU7pGQ5HbKhM3n/c0e89cd0a73f68066d5007a547bc8db1/CSS_Bootcamp_Thumbnail_v2.jpg",
+        "title": "CSS Tricks for Modern Web Design",
+        "description": "Tips and techniques to enhance your website's design with advanced CSS features.",
+        "date": "16-Sep-2024"
+    },
+    {
+        "img": "https://img.freepik.com/premium-photo/javascript-programming-code-abstract-technology-background_272306-155.jpg",
+        "title": "Optimizing JavaScript: Write Code that Performs",
+        "description": "Improve your JavaScript coding skills to boost website performance and user experience.",
+        "date": "15-Sep-2024"
+    },
+    {
+        "img": "https://i.ytimg.com/vi/LCSDJHs8pLo/maxresdefault.jpg",
+        "title": "Building the Website Foundation using HTML",
+        "description": "A beginner's guide to understanding HTML and its role in structuring web content.",
+        "date": "14-Sep-2024"
+    },
+    {
+        "img": "https://media.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Ficons.getbootstrap.com%2Fassets%2Fimg%2Ficons-hero.png",
+        "title": "Styling Websites with CSS and Bootstrap 5",
+        "description": "Learn how to style your websites with CSS for a clean, responsive look.",
+        "date": "13-Sep-2024"
+    },
+    {
+        "img": "https://media.licdn.com/dms/image/D4E12AQExlal2SfdXVw/article-cover_image-shrink_720_1280/0/1670882787679?e=2147483647&v=beta&t=zNJvHqHOsvc39_a2CkKpsnyRiOC4kDfs-6Cfbs68Tdc",
+        "title": "Mastering React: Building Fast and Scalable Web Apps",
+        "description": "Learn React's core concepts to build fast, scalable websites using modern front-end.",
+        "date": "12-Sep-2024"
+    },
+        {
+            "img": "https://miro.medium.com/v2/resize:fit:1200/1*5FUwPuisCxExaB07IEfvAw.jpeg",
+            "title": "State Management in React with Redux Toolkit",
+            "description": "Simplify state management in React applications using the powerful Redux Toolkit.",
+            "date": "11-Sep-2024"
+        },
+        {
+            "img": "https://miro.medium.com/v2/resize:fit:1200/0*SXZGxEd-bYCCGRsn.png",
+            "title": "Building REST APIs with Node.js",
+            "description": "Create fast and scalable REST APIs using Node.js and Express.js.",
+            "date": "10-Sep-2024"
+        },
+        {
+            "img": "https://www.syncfusion.com/blogs/wp-content/uploads/2022/09/JavaScript-API-Mocking-Techniques-1.png",
+            "title": "Understanding Asynchronous JavaScript",
+            "description": "Learn how to work with asynchronous operations in JavaScript using promises and async/await.",
+            "date": "9-Sep-2024"
+        },
+        {
+            "img": "https://miro.medium.com/v2/resize:fit:1400/0*uyB1LwIqpGTCpl3I",
+            "title": "Python for Beginners: Getting Started with Code",
+            "description": "A beginner's guide to Python, the versatile language used for web, data, and more.",
+            "date": "8-Sep-2024"
+        },
+        {
+            "img": "https://miro.medium.com/v2/resize:fit:1400/1*a3BHGbuAMpOaZj6HkTrNqA.png",
+            "title": "Exploring JavaScript ES6 Features",
+            "description": "Dive into ES6 and discover how new features simplify your JavaScript code.",
+            "date": "7-Sep-2024"
+        }
+]
