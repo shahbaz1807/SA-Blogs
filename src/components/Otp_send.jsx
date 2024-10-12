@@ -1,51 +1,66 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useState } from 'react';
-import { toast } from 'react-toastify';
+import { useState } from "react";
+import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from 'axios';
+import axios from "axios";
 
 const Otp_send = ({ data }) => {
+  const navigate = useNavigate();
 
-   const navigate = useNavigate();
-
-  const [otp, setOtp] = useState({otpCode: ""})
-  const [code, setCode] = useState(null)
+  const [otp, setOtp] = useState({ otpCode: "" });
+  const [code, setCode] = useState(null);
 
   const handleInp = (e) => {
     setOtp({ ...otp, [e.target.name]: e.target.value });
-  }
+  };
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  if (parseInt(code.code) === parseInt(otp.otpCode)) {
-    axios.post('https://sa-blogs-backend.vercel.app/user/sign_up' , data).then((res)=>{
-      console.log(res.data);
-      if (res.data.message) {
-        toast.warning("You Have Already Account!");
-      }else if (res.data.email) {
-        navigate("/");
-        toast.success("Account created successfully!");
-        localStorage.setItem("otpSuccessMessage", "Account Created Successfully!");
-        localStorage.setItem("userEmail", res.data.email)
-        localStorage.setItem("userName", res.data.name)
-        localStorage.setItem("userPassword", res.data.password)
-      }
-    }).catch((error) =>{
-      console.log(error);
-    })
-  } else {
-    toast.error("Your OTP is incorrect.");
-  }
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .get("https://sa-blogs-backend.vercel.app/user/check_otp")
+      .then((res) => {
+        setCode(res.data);
+        console.log(res.data);
+        if (parseInt(code.code) === parseInt(otp.otpCode)) {
+          axios
+            .post("https://sa-blogs-backend.vercel.app/user/sign_up", data)
+            .then((res) => {
+              console.log(res.data);
+              if (res.data.message) {
+                toast.warning("You Have Already Account!");
+              } else if (res.data.email) {
+                navigate("/");
+                toast.success("Account created successfully!");
+                localStorage.setItem(
+                  "otpSuccessMessage",
+                  "Account Created Successfully!",
+                );
+                localStorage.setItem("userEmail", res.data.email);
+                localStorage.setItem("userName", res.data.name);
+                localStorage.setItem("userPassword", res.data.password);
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        } else {
+          toast.error("Your OTP is incorrect.");
+        }
+      })
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
-      axios.get("https://sa-blogs-backend.vercel.app/user/check_otp").then((res) =>{
-        setCode(res.data)
+    axios
+      .get("https://sa-blogs-backend.vercel.app/user/check_otp")
+      .then((res) => {
+        setCode(res.data);
         console.log(res.data);
-      }).catch((error)=> console.log(error))
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   const fadeInUpAnimation = {
@@ -155,4 +170,4 @@ const handleSubmit = (e) => {
   );
 };
 
-export default Otp_send
+export default Otp_send;
