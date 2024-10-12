@@ -29,13 +29,13 @@ const ShowBlog = ({ setPopup, blogData }) => {
   return (
     <motion.div
       ref={ref}
-      className="fixed top-0 left-0 w-full h-screen z-[2] flex justify-center items-center backdrop-blur-md bg-black/30"
+      className="fixed top-0 left-0 w-full h-screen z-[2] backdrop-blur-md bg-black/30"
     >
       <motion.div
         variants={fadeInUpAnimation}
         initial="hidden"
         animate="show"
-        className="w-[90%] px-5 relative sm:px-7 md:px-10 py-7 m-auto min-h-[70vh] overflow-hidden rounded-xl bg-[#3f3f3f]"
+        className="w-[90%] top-[17%] px-5 relative sm:px-7 md:px-10 py-7 m-auto min-h-[70vh] overflow-hidden rounded-xl bg-[#3f3f3f]"
       >
         <motion.div
           variants={fadeInUpAnimation}

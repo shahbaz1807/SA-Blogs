@@ -17,13 +17,7 @@ const Otp_send = ({ data }) => {
     setOtp({ ...otp, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .get("https://sa-blogs-backend.vercel.app/user/check_otp")
-      .then((res) => {
-        setCode(res.data);
-        console.log(res.data);
+const signUP = () => {
         if (parseInt(code.code) === parseInt(otp.otpCode)) {
           axios
             .post("https://sa-blogs-backend.vercel.app/user/sign_up", data)
@@ -49,6 +43,17 @@ const Otp_send = ({ data }) => {
         } else {
           toast.error("Your OTP is incorrect.");
         }
+}
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .get("https://sa-blogs-backend.vercel.app/user/check_otp")
+      .then((res) => {
+        setCode(res.data);
+        console.log(res.data);
+      }).then(()=> {
+        signUP()
       })
       .catch((error) => console.log(error));
   };

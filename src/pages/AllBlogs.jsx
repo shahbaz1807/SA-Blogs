@@ -39,7 +39,7 @@ const AllBlogs = () => {
               variants={fadeInUpAnimation}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-3 font-amsterdam text-primary"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-3  mb-3 sm:mb-0 font-amsterdam text-primary"
             >
               All Blogs
             </motion.h1>
