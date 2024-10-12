@@ -23,12 +23,12 @@ const Otp_send = ({ data }) => {
       .get("https://sa-blogs-backend.vercel.app/user/check_otp")
       .then((res) => {
         setCode(res.data);
-        console.log(res.data);
+      })
+      .then(() => {
         if (parseInt(code.code) === parseInt(otp.otpCode)) {
           axios
             .post("https://sa-blogs-backend.vercel.app/user/sign_up", data)
             .then((res) => {
-              console.log(res.data);
               if (res.data.message) {
                 toast.warning("You Have Already Account!");
               } else if (res.data.email) {
@@ -39,8 +39,6 @@ const Otp_send = ({ data }) => {
                   "Account Created Successfully!",
                 );
                 localStorage.setItem("userEmail", res.data.email);
-                localStorage.setItem("userName", res.data.name);
-                localStorage.setItem("userPassword", res.data.password);
               }
             })
             .catch((error) => {
