@@ -45,6 +45,28 @@ const Login = () => {
         .catch((error) => {
           console.log(error);
         });
+    }else{
+         axios
+           .post("https://sa-blogs-backend.vercel.app/user/sign_in", loginData)
+           .then((res) => {
+             console.log(res.data);
+
+             if (res.data.message) {
+               toast.error(res.data.message);
+             } else if (res.data.email) {
+               navigate("/");
+               localStorage.setItem(
+                 "otpSuccessMessage",
+                 "Account login successfully!",
+               );
+               localStorage.setItem("userEmail", res.data.email);
+               localStorage.setItem("userName", res.data.name);
+               localStorage.setItem("userPassword", res.data.password);
+             }
+           })
+           .catch((error) => {
+             console.log(error);
+           });
     }
   };
 
@@ -66,16 +88,14 @@ const Login = () => {
   useEffect(() => {
     const storeEmail = localStorage.getItem("email");
     const storePassword = localStorage.getItem("password");
-    if (!storeEmail | !storePassword) {
-      console.log("User is not logged in.");
-    } else {
-      const localData = {
-        email: storeEmail,
-        password: storePassword,
-        remindMe: true,
-      };
-      setLoginData(localData);
-    }
+    if (storeEmail | storePassword) {
+            const localData = {
+              email: storeEmail,
+              password: storePassword,
+              remindMe: true,
+            };
+            setLoginData(localData);
+    } 
   }, []);
 
   return (
