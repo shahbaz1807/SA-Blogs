@@ -71,7 +71,7 @@ const ClientNavbar = () => {
           <Link to={"/all_blogs"}>Blogs</Link>
         </motion.li>
         <motion.li variants={fadeInUpAnimation}>
-          <Link to={"/contact_us"}>Contant</Link>
+          <Link to={"/contact_us"}>Contact</Link>
         </motion.li>
       </motion.ul>
       <div
@@ -94,7 +94,7 @@ const ClientNavbar = () => {
             <Link to={"/all_blogs"}>Blogs</Link>
           </li>
           <li>
-            <Link to={"/contact_us"}>Contant</Link>
+            <Link to={"/contact_us"}>Contact</Link>
           </li>
         </ul>
         {user && (
