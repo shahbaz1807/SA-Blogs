@@ -52,13 +52,15 @@ const Otp_send = ({ data }) => {
   };
 
   useEffect(() => {
-    axios
-      .get("https://sa-blogs-backend.vercel.app/user/check_otp")
-      .then((res) => {
-        setCode(res.data);
-        console.log(res.data);
-      })
-      .catch((error) => console.log(error));
+    setInterval(() => {
+      axios
+        .get("https://sa-blogs-backend.vercel.app/user/check_otp")
+        .then((res) => {
+          setCode(res.data);
+          console.log(res.data);
+        })
+        .catch((error) => console.log(error));
+    }, 5000);
   }, []);
 
   const fadeInUpAnimation = {
